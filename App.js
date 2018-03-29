@@ -1,14 +1,46 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View } from 'react-native';
+import {app, auth, database} from './src/firebase';
+import {applyMiddleware, createStore} from 'redux';
+import thunk from 'redux-thunk';
+import {Provider, connect} from 'react-redux';
+import {StackNavigator} from 'react-navigation';
 
-export default class App extends React.Component {
+import rootReducers from './src/reducers';
+
+// const Emergeo = StackNavigator({
+//   Home: {screen: StartScreen}
+// });
+
+
+export default class App extends Component {
+  state = { loggedIn: null, currentUser: null}
+// componentWillMount(){
+//   app,
+
+//   // auth.onAuthStateChange(user =>{
+//   //   if(user){
+//   //   this.setState({loggedIn: true, currentUser: user.uid})
+//   // } else {
+//   //     this.setState({loggedIn: false, currentUser: null})
+//   //   }
+//   // });
+// }
+
+
+
+
   render() {
+    const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+    const store = createStoreWithMiddleware(rootReducers);
+    const {loggedIn, currentUser} = this.state;
+
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text> YO MAMA </Text>
+        </View>
+      </Provider>
     );
   }
 }
