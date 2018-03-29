@@ -43,15 +43,15 @@ const styles = {
     justifyContent: 'center'
   },
   buttonStyle:{
-    backgroundColor: '#5d6d7e',
+    backgroundColor: '#00A95B',
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#fff',
+    borderColor: 'orange',
     marginLeft: 5,
     marginRight: 5,
     color: '#fff',
     width: 100,
-    marginTop:50
+    marginTop:20
   },
   textStyle: {
     alignSelf: 'center',
@@ -66,7 +66,9 @@ const styles = {
     marginTop:10,
     textAlign: 'center',
     backgroundColor: 'white',
-    width:250
+    width:250,
+    borderRadius: 5,
+
   }
 };
 

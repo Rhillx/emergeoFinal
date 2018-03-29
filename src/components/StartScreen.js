@@ -24,8 +24,8 @@ class StartScreen extends Component{
     render(){  
         return(
         	<View style={styles.containerStyle}>
-	        	<View >
-	        		<Text style={styles.textStyle}>Emergeo</Text>
+	        	<View style={{flexDirection:'row', flexWrap:'wrap'}}>
+	        		<Text style={styles.textStyle, styles.spanText}>e</Text><Text style={styles.textStyle} >merGeo</Text>
 	        	</View>
 
 	        	<View >
@@ -51,14 +51,19 @@ var styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	textStyle:{
-		
 		fontSize:30,
-		color: '#82e0aa'
+		color: '#00A95B'
 	},
   imageStyle: {
-  	height:300,
-  	width:300,
+  	height:120,
+  	width:100,
   	
+  },
+  spanText: {
+  	fontSize: 46,
+  	color: '#00A95B',
+  	marginTop:-19,
+  	fontWeight:"300"
   },
  
   buttonText: {
