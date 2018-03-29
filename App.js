@@ -1,13 +1,23 @@
+// #5d6d7e grey blue
+// #34495e dark blue
+// #d0ece7 aqua
+// #abebc6 lime
+// #82e0aa darker lime
+// #186a3b evergreen
+
+
+
+
+
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import StartScreen from './src/components/StartScreen';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <StartScreen />
       </View>
     );
   }
@@ -16,8 +26,5 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
