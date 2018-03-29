@@ -1,3 +1,13 @@
+
+// #5d6d7e grey blue
+// #34495e dark blue
+// #d0ece7 aqua
+// #abebc6 lime
+// #82e0aa darker lime
+// #186a3b evergreen
+
+
+
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View } from 'react-native';
 import {app, auth, database} from './src/firebase';
@@ -30,17 +40,21 @@ export default class App extends Component {
 
 
 
+
   render() {
     const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
     const store = createStoreWithMiddleware(rootReducers);
     const {loggedIn, currentUser} = this.state;
 
     return (
+
+      
       <Provider store={store}>
         <View style={styles.container}>
           <Text> YO MAMA </Text>
         </View>
       </Provider>
+
     );
   }
 }
@@ -48,8 +62,5 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
