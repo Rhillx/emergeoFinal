@@ -24,7 +24,7 @@ class Auth extends Component{
             <View>
             <TouchableOpacity onPress={() => alert('hi')} style={styles.buttonStyle}>
                 <Text style={styles.textStyle}>
-                Sign In
+                Enter
                 </Text>
             </TouchableOpacity>
             </View>

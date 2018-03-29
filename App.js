@@ -12,12 +12,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import StartScreen from './src/components/StartScreen';
+import CreateProfile from './src/components/CreateProfile';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StartScreen />
+        <CreateProfile />
       </View>
     );
   }

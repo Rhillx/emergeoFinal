@@ -14,7 +14,6 @@ import { StyleSheet,
 	    View,
 	    TouchableHighlight, TouchableOpacity,
 	    Image,} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import Auth from './Auth.js';
 
 
@@ -52,17 +51,18 @@ var styles = StyleSheet.create({
 	},
 	textStyle:{
 		fontSize:30,
-		color: '#00A95B'
+		color: '#5d6d7e'
 	},
   imageStyle: {
   	height:120,
   	width:100,
+  	marginBottom: 35
   	
   },
   spanText: {
-  	fontSize: 46,
-  	color: '#00A95B',
-  	marginTop:-19,
+  	fontSize: 44,
+  	color: '#666',
+  	marginTop:-13,
   	fontWeight:"300"
   },
  
