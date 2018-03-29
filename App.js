@@ -1,3 +1,4 @@
+
 // #5d6d7e grey blue
 // #34495e dark blue
 // #d0ece7 aqua
@@ -7,19 +8,53 @@
 
 
 
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View } from 'react-native';
+import {app, auth, database} from './src/firebase';
+import {applyMiddleware, createStore} from 'redux';
+import thunk from 'redux-thunk';
+import {Provider, connect} from 'react-redux';
+import {StackNavigator} from 'react-navigation';
+
+import rootReducers from './src/reducers';
+
+// const Emergeo = StackNavigator({
+//   Home: {screen: StartScreen}
+// });
 
 
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import StartScreen from './src/components/StartScreen';
-import CreateProfile from './src/components/CreateProfile';
+export default class App extends Component {
+  state = { loggedIn: null, currentUser: null}
+// componentWillMount(){
+//   app,
 
-export default class App extends React.Component {
+//   // auth.onAuthStateChange(user =>{
+//   //   if(user){
+//   //   this.setState({loggedIn: true, currentUser: user.uid})
+//   // } else {
+//   //     this.setState({loggedIn: false, currentUser: null})
+//   //   }
+//   // });
+// }
+
+
+
+
+
   render() {
+    const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+    const store = createStoreWithMiddleware(rootReducers);
+    const {loggedIn, currentUser} = this.state;
+
     return (
-      <View style={styles.container}>
-        <CreateProfile />
-      </View>
+
+      
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text> YO MAMA </Text>
+        </View>
+      </Provider>
+
     );
   }
 }
